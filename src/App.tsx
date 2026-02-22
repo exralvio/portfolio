@@ -7,12 +7,9 @@ const LINKS = [
 ]
 
 const SKILLS = [
-  'TypeScript',
-  'React',
-  'Node.js',
-  'CSS / Sass',
-  'REST APIs',
-  'Git',
+  { category: 'Frontend', skills: ['Bootstrap', 'React', 'TypeScript', 'Next.js'] },
+  { category: 'Backend', skills: ['Python', 'Node.js', 'NestJS'] },
+  { category: 'Tools', skills: ['Git', 'REST APIs', 'CSS / Sass'] },
 ]
 
 const EDUCATION = [
@@ -115,11 +112,18 @@ function App() {
 
           <section className="section" id="skills" aria-labelledby="skills-heading">
             <h2 id="skills-heading" className="section__title">Skills</h2>
-            <ul className="skills-list">
-              {SKILLS.map((skill) => (
-                <li key={skill} className="skills-list__item">{skill}</li>
+            <div className="skills-categories">
+              {SKILLS.map(({ category, skills }) => (
+                <div key={category} className="skills-category">
+                  <h3 className="skills-category__name">{category}</h3>
+                  <ul className="skills-list">
+                    {skills.map((skill) => (
+                      <li key={skill} className="skills-list__item">{skill}</li>
+                    ))}
+                  </ul>
+                </div>
               ))}
-            </ul>
+            </div>
           </section>
 
           <section className="section" id="education" aria-labelledby="education-heading">
@@ -135,6 +139,15 @@ function App() {
                 </li>
               ))}
             </ul>
+          </section>
+
+          <section className="section section--contact" id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading" className="section__title">Contact</h2>
+            <p className="contact-text">
+              Open to new opportunities and conversations.
+              <br />
+              <a href="mailto:you@example.com" className="contact-email">you@example.com</a>
+            </p>
           </section>
         </aside>
 
@@ -194,15 +207,6 @@ function App() {
                 </li>
               ))}
             </ul>
-          </section>
-
-          <section className="section section--contact" id="contact" aria-labelledby="contact-heading">
-            <h2 id="contact-heading" className="section__title">Contact</h2>
-            <p className="contact-text">
-              Open to new opportunities and conversations.
-              <br />
-              <a href="mailto:you@example.com" className="contact-email">you@example.com</a>
-            </p>
           </section>
         </main>
       </div>
