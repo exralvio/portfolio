@@ -2,9 +2,9 @@ import { useState, useCallback, useEffect } from 'react'
 import './App.css'
 
 const LINKS = [
-  { href: 'https://github.com', label: 'GitHub', icon: 'github' },
-  { href: 'https://linkedin.com', label: 'LinkedIn', icon: 'linkedin' },
-  { href: 'mailto:you@example.com', label: 'Email', icon: 'mail' },
+  { href: 'https://github.com/exralvio', label: 'GitHub', icon: 'github' },
+  { href: 'https://www.linkedin.com/in/rizky-alvio-leegia/', label: 'LinkedIn', icon: 'linkedin' },
+  { href: 'mailto:exralvio&#64;gmail&#46;com', label: 'Email', icon: 'mail' },
 ]
 
 const SKILLS = [
@@ -170,7 +170,6 @@ const NAV_SECTIONS = [
   { id: 'side-projects', label: 'Side Projects' },
   { id: 'experience', label: 'Experience' },
   { id: 'education', label: 'Education' },
-  { id: 'contact', label: 'Contact' },
   { id: 'skills', label: 'Skills' },
 ]
 
@@ -378,8 +377,11 @@ function App() {
               }}
             />
             <h1 className="intro__name">Alvio Leegia</h1>
-            <p className="intro__title">Senior Fullstack Engineer</p>
-            <nav className="intro__links" aria-label="Social and contact links">
+            <p className="intro__title">Fullstack Engineer</p>
+            <p className="intro__bio">
+              Engineer with a track record of building scalable APIs and dashboards. I ship with TypeScript, Node, Python, and Go, and have led teams and agile delivery across 10+ years.
+            </p>
+            <nav className="intro__links" aria-label="Social links">
               {LINKS.map(({ href, label, icon }) => (
                 <a key={label} href={href} className="intro__link" target="_blank" rel="noopener noreferrer" aria-label={label}>
                   <Icon name={icon} />
@@ -387,15 +389,6 @@ function App() {
               ))}
             </nav>
           </header>
-
-          <section className="section section--contact" id="contact" aria-labelledby="contact-heading">
-            <h2 id="contact-heading" className="section__title">Contact</h2>
-            <p className="contact-text">
-              Open to new opportunities and conversations.
-              <br />
-              <a href="mailto:exralvio&#64;gmail&#46;com" className="contact-email">exralvio&#64;gmail&#46;com</a>
-            </p>
-          </section>
 
           <section className="section" id="skills" aria-labelledby="skills-heading">
             <h2 id="skills-heading" className="section__title">Skills</h2>

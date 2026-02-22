@@ -160,7 +160,15 @@
   font-size: 0.9375rem;
   color: var(--color-text-muted);
   font-weight: 500;
-  margin-bottom: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.intro__bio {
+  font-size: 0.875rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  margin: 0 auto 1.25rem;
+  max-width: 28ch;
 }
 
 .intro__links {
@@ -210,12 +218,12 @@
   text-transform: uppercase;
   letter-spacing: 0.08em;
   color: var(--color-title);
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
 }
 
 @media (min-width: 768px) {
   .section__title {
-    margin-bottom: 1.25rem;
+    margin-bottom: 0.75rem;
   }
 }
 
@@ -284,25 +292,22 @@
   color: var(--color-text-muted);
 }
 
-/* Projects */
-.project-list {
+/* Projects & Experience: consistent list gap and item padding */
+.project-list,
+.experience-list {
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.5rem;
 }
 
-@media (min-width: 768px) {
-  .project-list {
-    gap: 1.5rem;
-  }
-}
-
-.project-card {
+.project-card,
+.experience-item {
   padding: 1rem 0;
   border-bottom: 1px solid var(--color-border-soft);
 }
 
-.project-card:last-child {
+.project-card:last-child,
+.experience-item:last-child {
   border-bottom: none;
   padding-bottom: 0;
 }
@@ -463,27 +468,6 @@
 }
 
 /* Experience */
-.experience-list {
-  display: flex;
-  flex-direction: column;
-  gap: 1.25rem;
-}
-
-@media (min-width: 768px) {
-  .experience-list {
-    gap: 1.5rem;
-  }
-}
-
-.experience-item {
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--color-border-soft);
-}
-
-.experience-item:last-child {
-  border-bottom: none;
-  padding-bottom: 0;
-}
 
 .experience-item__header {
   display: flex;
@@ -540,33 +524,6 @@
   .experience-item__description {
     font-size: 0.9375rem;
   }
-}
-
-/* Contact */
-.section--contact {
-  border-bottom: 1px solid var(--color-border);
-}
-
-.contact-text {
-  font-size: 0.875rem;
-  color: var(--color-text-muted);
-  line-height: 1.6;
-}
-
-@media (min-width: 768px) {
-  .contact-text {
-    font-size: 0.9375rem;
-  }
-}
-
-.contact-email {
-  font-weight: 500;
-  color: var(--color-title);
-}
-
-.contact-email:hover {
-  color: var(--color-accent-hover);
-  text-decoration: underline;
 }
 
 /* Footer */
