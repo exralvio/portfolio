@@ -22,12 +22,19 @@ const COMPANY_PROJECTS = [
     description: 'Brief description of your role and impact. Technologies used.',
     period: '2023 – Present',
     images: ['https://picsum.photos/seed/alpha1/800/500', 'https://picsum.photos/seed/alpha2/800/500'],
+    findOutMore: 'https://example.com/alpha',
+    stacks: ['React', 'TypeScript', 'Node.js'],
+    tools: ['Figma', 'Git', 'Vercel'],
+    team: '4 engineers',
   },
   {
     name: 'Project Beta',
     description: 'Another company project with outcomes and stack.',
     period: '2022 – 2023',
     images: ['https://picsum.photos/seed/beta1/800/500', 'https://picsum.photos/seed/beta2/800/500', 'https://picsum.photos/seed/beta3/800/500'],
+    stacks: ['Python', 'PostgreSQL'],
+    tools: ['Docker', 'AWS'],
+    team: 'Solo',
   },
 ]
 
@@ -37,12 +44,18 @@ const SIDE_PROJECTS = [
     description: 'What it does and why it matters. Link optional.',
     link: '#',
     images: ['https://picsum.photos/seed/side1/800/500'],
+    findOutMore: 'https://github.com/example/side-one',
+    stacks: ['Next.js', 'Tailwind'],
+    tools: ['Vercel'],
+    team: 'Solo',
   },
   {
     name: 'Side Project Two',
     description: 'Short description and tech used.',
     link: '#',
     images: ['https://picsum.photos/seed/side2a/800/500', 'https://picsum.photos/seed/side2b/800/500'],
+    stacks: ['React', 'Node.js'],
+    tools: ['Figma', 'Git'],
   },
 ]
 
@@ -155,7 +168,7 @@ function App() {
           <section className="section" id="company-projects" aria-labelledby="company-heading">
             <h2 id="company-heading" className="section__title">Company Projects</h2>
             <ul className="project-list">
-              {COMPANY_PROJECTS.map(({ name, description, period, images }) => (
+              {COMPANY_PROJECTS.map(({ name, description, period, images, findOutMore, stacks, tools, team }) => (
                 <li key={name} className="project-card">
                   <div className="project-card__header">
                     <h3 className="project-card__name">{name}</h3>
@@ -176,6 +189,38 @@ function App() {
                     )
                   })()}
                   <p className="project-card__description">{description}</p>
+                  {(stacks?.length || tools?.length || team) ? (
+                    <div className="project-card__meta">
+                      {stacks?.length ? (
+                        <div className="project-card__meta-row">
+                          <span className="project-card__meta-label">Stacks</span>
+                          <span className="project-card__meta-value">{stacks.join(', ')}</span>
+                        </div>
+                      ) : null}
+                      {tools?.length ? (
+                        <div className="project-card__meta-row">
+                          <span className="project-card__meta-label">Tools</span>
+                          <span className="project-card__meta-value">{tools.join(', ')}</span>
+                        </div>
+                      ) : null}
+                      {team ? (
+                        <div className="project-card__meta-row">
+                          <span className="project-card__meta-label">Team</span>
+                          <span className="project-card__meta-value">{team}</span>
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
+                  {findOutMore ? (
+                    <a href={findOutMore} className="project-card__find-out-more" target="_blank" rel="noopener noreferrer">
+                      <svg className="project-card__find-out-more-icon" width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
+                      Find out more
+                    </a>
+                  ) : null}
                 </li>
               ))}
             </ul>
@@ -184,7 +229,7 @@ function App() {
           <section className="section" id="side-projects" aria-labelledby="side-heading">
             <h2 id="side-heading" className="section__title">Side Projects</h2>
             <ul className="project-list">
-              {SIDE_PROJECTS.map(({ name, description, link, images }) => (
+              {SIDE_PROJECTS.map(({ name, description, link, images, findOutMore, stacks, tools, team }) => (
                 <li key={name} className="project-card">
                   <h3 className="project-card__name">
                     <a href={link} className="project-card__link" target="_blank" rel="noopener noreferrer">{name}</a>
@@ -204,6 +249,38 @@ function App() {
                     )
                   })()}
                   <p className="project-card__description">{description}</p>
+                  {(stacks?.length || tools?.length || team) ? (
+                    <div className="project-card__meta">
+                      {stacks?.length ? (
+                        <div className="project-card__meta-row">
+                          <span className="project-card__meta-label">Stacks</span>
+                          <span className="project-card__meta-value">{stacks.join(', ')}</span>
+                        </div>
+                      ) : null}
+                      {tools?.length ? (
+                        <div className="project-card__meta-row">
+                          <span className="project-card__meta-label">Tools</span>
+                          <span className="project-card__meta-value">{tools.join(', ')}</span>
+                        </div>
+                      ) : null}
+                      {team ? (
+                        <div className="project-card__meta-row">
+                          <span className="project-card__meta-label">Team</span>
+                          <span className="project-card__meta-value">{team}</span>
+                        </div>
+                      ) : null}
+                    </div>
+                  ) : null}
+                  {findOutMore ? (
+                    <a href={findOutMore} className="project-card__find-out-more" target="_blank" rel="noopener noreferrer">
+                      <svg className="project-card__find-out-more-icon" width={14} height={14} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
+                      Find out more
+                    </a>
+                  ) : null}
                 </li>
               ))}
             </ul>
@@ -212,7 +289,7 @@ function App() {
       </div>
 
       <footer className="footer">
-        <p>© {new Date().getFullYear()} Your Name</p>
+        <p>© {new Date().getFullYear()} ALV Projects</p>
       </footer>
     </div>
   )

@@ -327,6 +327,53 @@
   }
 }
 
+.project-card__meta {
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #ebebeb;
+}
+
+.project-card__meta-row {
+  font-size: 0.8125rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.5rem;
+  margin-bottom: 0.35rem;
+}
+
+.project-card__meta-row:last-child {
+  margin-bottom: 0;
+}
+
+.project-card__meta-label {
+  color: #737373;
+  font-weight: 500;
+  flex-shrink: 0;
+}
+
+.project-card__meta-value {
+  color: #404040;
+}
+
+.project-card__find-out-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  color: var(--color-title);
+  margin-top: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.project-card__find-out-more:hover {
+  color: #b85c6c;
+}
+
+.project-card__find-out-more-icon {
+  flex-shrink: 0;
+}
+
 /* Contact */
 .section--contact {
   border-bottom: none;
