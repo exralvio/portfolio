@@ -298,6 +298,7 @@
   color: var(--color-title);
 }
 
+#company-projects .project-card__name,
 #side-projects .project-card__name,
 #side-projects .project-card__link {
   color: #1a1a1a;
@@ -376,6 +377,79 @@
 
 .project-card__find-out-more-icon {
   flex-shrink: 0;
+}
+
+/* Experience */
+.experience-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+@media (min-width: 768px) {
+  .experience-list {
+    gap: 1.5rem;
+  }
+}
+
+.experience-item {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid #ebebeb;
+}
+
+.experience-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.experience-item__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.experience-item__company {
+  font-weight: 600;
+  font-size: 0.9375rem;
+  color: #1a1a1a;
+}
+
+.experience-item__year {
+  font-size: 0.75rem;
+  color: #737373;
+  white-space: nowrap;
+}
+
+.experience-item__position {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--color-title);
+  margin-bottom: 0.5rem;
+}
+
+.experience-item__description {
+  font-size: 0.875rem;
+  color: #525252;
+  line-height: 1.5;
+  margin: 0;
+  padding-left: 1.25rem;
+  list-style: disc;
+}
+
+.experience-item__description li {
+  margin-bottom: 0.35rem;
+}
+
+.experience-item__description li:last-child {
+  margin-bottom: 0;
+}
+
+@media (min-width: 768px) {
+  .experience-item__description {
+    font-size: 0.9375rem;
+  }
 }
 
 /* Contact */

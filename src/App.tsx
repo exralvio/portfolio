@@ -60,6 +60,28 @@ const SIDE_PROJECTS = [
   },
 ]
 
+const EXPERIENCE = [
+  {
+    company: 'Company Name',
+    position: 'Senior Software Engineer',
+    description: [
+      'Brief description of your responsibilities and impact.',
+      'Key achievements and technologies used.',
+      'Another notable contribution or outcome.',
+    ],
+    year: '2022 – Present',
+  },
+  {
+    company: 'Previous Company',
+    position: 'Software Engineer',
+    description: [
+      'What you built and how you contributed.',
+      'Tech stack and outcomes.',
+    ],
+    year: '2020 – 2022',
+  },
+]
+
 /** Ensures at least 2 image slots (duplicate if 1, placeholders if 0), max 3. */
 function getProjectDisplayImages(images: string[] | undefined): (string | null)[] {
   if (!images?.length) return [null, null]
@@ -179,6 +201,26 @@ function App() {
         </aside>
 
         <main className="portfolio__main">
+          <section className="section" id="experience" aria-labelledby="experience-heading">
+            <h2 id="experience-heading" className="section__title">Experience</h2>
+            <ul className="experience-list">
+              {EXPERIENCE.map(({ company, position, description, year }) => (
+                <li key={`${company}-${year}`} className="experience-item">
+                  <div className="experience-item__header">
+                    <span className="experience-item__company">{company}</span>
+                    <span className="experience-item__year">{year}</span>
+                  </div>
+                  <p className="experience-item__position">{position}</p>
+                  <ul className="experience-item__description">
+                    {description.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </section>
+
           <section className="section" id="company-projects" aria-labelledby="company-heading">
             <h2 id="company-heading" className="section__title">Company Projects</h2>
             <ul className="project-list">
