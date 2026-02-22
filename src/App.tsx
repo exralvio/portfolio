@@ -1,3 +1,4 @@
+import { useState, useCallback, useEffect } from 'react'
 import './App.css'
 
 const LINKS = [
@@ -96,6 +97,19 @@ function Icon({ name }: { name: string }) {
 }
 
 function App() {
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null)
+
+  const closeLightbox = useCallback(() => setLightboxImage(null), [])
+
+  useEffect(() => {
+    if (!lightboxImage) return
+    const onKeyDown = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeLightbox()
+    }
+    window.addEventListener('keydown', onKeyDown)
+    return () => window.removeEventListener('keydown', onKeyDown)
+  }, [lightboxImage, closeLightbox])
+
   return (
     <div className="portfolio">
       <div className="portfolio__layout">
@@ -180,7 +194,18 @@ function App() {
                       <div className={`project-card__images project-card__images--${displayImages.length}`}>
                         {displayImages.map((src, i) =>
                           src ? (
-                            <img key={i} src={src} alt="" className="project-card__img" loading="lazy" />
+                            <img
+                              key={i}
+                              src={src}
+                              alt=""
+                              className="project-card__img project-card__img--clickable"
+                              loading="lazy"
+                              onClick={() => setLightboxImage(src)}
+                              role="button"
+                              tabIndex={0}
+                              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setLightboxImage(src) } }}
+                              aria-label="View image larger"
+                            />
                           ) : (
                             <div key={i} className="project-card__img project-card__img--placeholder" aria-hidden />
                           )
@@ -240,7 +265,18 @@ function App() {
                       <div className={`project-card__images project-card__images--${displayImages.length}`}>
                         {displayImages.map((src, i) =>
                           src ? (
-                            <img key={i} src={src} alt="" className="project-card__img" loading="lazy" />
+                            <img
+                              key={i}
+                              src={src}
+                              alt=""
+                              className="project-card__img project-card__img--clickable"
+                              loading="lazy"
+                              onClick={() => setLightboxImage(src)}
+                              role="button"
+                              tabIndex={0}
+                              onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); setLightboxImage(src) } }}
+                              aria-label="View image larger"
+                            />
                           ) : (
                             <div key={i} className="project-card__img project-card__img--placeholder" aria-hidden />
                           )
@@ -287,6 +323,35 @@ function App() {
           </section>
         </main>
       </div>
+
+      {lightboxImage ? (
+        <div
+          className="lightbox"
+          onClick={closeLightbox}
+          role="dialog"
+          aria-modal="true"
+          aria-label="Image preview"
+        >
+          <button
+            type="button"
+            className="lightbox__close"
+            onClick={closeLightbox}
+            aria-label="Close"
+          >
+            <svg width={24} height={24} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden>
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
+          </button>
+          <img
+            src={lightboxImage}
+            alt=""
+            className="lightbox__img"
+            onClick={(e) => e.stopPropagation()}
+            draggable={false}
+          />
+        </div>
+      ) : null}
 
       <footer className="footer">
         <p>© {new Date().getFullYear()} ALV Projects</p>
