@@ -60,6 +60,15 @@ const SIDE_PROJECTS = [
   },
 ]
 
+const NAV_SECTIONS = [
+  { id: 'experience', label: 'Experience' },
+  { id: 'company-projects', label: 'Company Projects' },
+  { id: 'side-projects', label: 'Side Projects' },
+  { id: 'skills', label: 'Skills' },
+  { id: 'education', label: 'Education' },
+  { id: 'contact', label: 'Contact' },
+]
+
 const EXPERIENCE = [
   {
     company: 'Company Name',
@@ -134,6 +143,17 @@ function App() {
 
   return (
     <div className="portfolio">
+      <nav className="page-nav" aria-label="Jump to section">
+        <ul className="page-nav__list">
+          {NAV_SECTIONS.map(({ id, label }) => (
+            <li key={id} className="page-nav__item">
+              <a href={`#${id}`} className="page-nav__link">
+                {label}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </nav>
       <div className="portfolio__layout">
         <aside className="portfolio__aside">
           <header className="intro">
