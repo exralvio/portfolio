@@ -24,11 +24,13 @@ const COMPANY_PROJECTS = [
     name: 'Project Alpha',
     description: 'Brief description of your role and impact. Technologies used.',
     period: '2023 – Present',
+    images: ['https://picsum.photos/seed/alpha1/800/500', 'https://picsum.photos/seed/alpha2/800/500'],
   },
   {
     name: 'Project Beta',
     description: 'Another company project with outcomes and stack.',
     period: '2022 – 2023',
+    images: ['https://picsum.photos/seed/beta1/800/500', 'https://picsum.photos/seed/beta2/800/500', 'https://picsum.photos/seed/beta3/800/500'],
   },
 ]
 
@@ -37,13 +39,22 @@ const SIDE_PROJECTS = [
     name: 'Side Project One',
     description: 'What it does and why it matters. Link optional.',
     link: '#',
+    images: ['https://picsum.photos/seed/side1/800/500'],
   },
   {
     name: 'Side Project Two',
     description: 'Short description and tech used.',
     link: '#',
+    images: ['https://picsum.photos/seed/side2a/800/500', 'https://picsum.photos/seed/side2b/800/500'],
   },
 ]
+
+/** Ensures at least 2 image slots (duplicate if 1, placeholders if 0), max 3. */
+function getProjectDisplayImages(images: string[] | undefined): (string | null)[] {
+  if (!images?.length) return [null, null]
+  if (images.length === 1) return [images[0], images[0]]
+  return images.slice(0, 3)
+}
 
 function Icon({ name }: { name: string }) {
   const size = 20
@@ -80,7 +91,17 @@ function App() {
       <div className="portfolio__layout">
         <aside className="portfolio__aside">
           <header className="intro">
-            <img src="/photo.jpg" alt="" className="intro__photo" width={120} height={120} />
+            <img
+              src="/photo.jpg"
+              alt=""
+              className="intro__photo"
+              width={120}
+              height={120}
+              onError={(e) => {
+                e.currentTarget.src = 'https://picsum.photos/seed/portfolio-avatar/200/200'
+                e.currentTarget.onerror = null
+              }}
+            />
             <h1 className="intro__name">Your Name</h1>
             <p className="intro__title">Software Engineer · Product Builder</p>
             <nav className="intro__links" aria-label="Social and contact links">
@@ -121,12 +142,26 @@ function App() {
           <section className="section" id="company-projects" aria-labelledby="company-heading">
             <h2 id="company-heading" className="section__title">Company Projects</h2>
             <ul className="project-list">
-              {COMPANY_PROJECTS.map(({ name, description, period }) => (
+              {COMPANY_PROJECTS.map(({ name, description, period, images }) => (
                 <li key={name} className="project-card">
                   <div className="project-card__header">
                     <h3 className="project-card__name">{name}</h3>
                     <span className="project-card__period">{period}</span>
                   </div>
+                  {(() => {
+                    const displayImages = getProjectDisplayImages(images)
+                    return (
+                      <div className={`project-card__images project-card__images--${displayImages.length}`}>
+                        {displayImages.map((src, i) =>
+                          src ? (
+                            <img key={i} src={src} alt="" className="project-card__img" loading="lazy" />
+                          ) : (
+                            <div key={i} className="project-card__img project-card__img--placeholder" aria-hidden />
+                          )
+                        )}
+                      </div>
+                    )
+                  })()}
                   <p className="project-card__description">{description}</p>
                 </li>
               ))}
@@ -136,11 +171,25 @@ function App() {
           <section className="section" id="side-projects" aria-labelledby="side-heading">
             <h2 id="side-heading" className="section__title">Side Projects</h2>
             <ul className="project-list">
-              {SIDE_PROJECTS.map(({ name, description, link }) => (
+              {SIDE_PROJECTS.map(({ name, description, link, images }) => (
                 <li key={name} className="project-card">
                   <h3 className="project-card__name">
                     <a href={link} className="project-card__link" target="_blank" rel="noopener noreferrer">{name}</a>
                   </h3>
+                  {(() => {
+                    const displayImages = getProjectDisplayImages(images)
+                    return (
+                      <div className={`project-card__images project-card__images--${displayImages.length}`}>
+                        {displayImages.map((src, i) =>
+                          src ? (
+                            <img key={i} src={src} alt="" className="project-card__img" loading="lazy" />
+                          ) : (
+                            <div key={i} className="project-card__img project-card__img--placeholder" aria-hidden />
+                          )
+                        )}
+                      </div>
+                    )
+                  })()}
                   <p className="project-card__description">{description}</p>
                 </li>
               ))}
