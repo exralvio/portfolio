@@ -213,8 +213,8 @@ function App() {
                 e.currentTarget.onerror = null
               }}
             />
-            <h1 className="intro__name">Your Name</h1>
-            <p className="intro__title">Software Engineer · Product Builder</p>
+            <h1 className="intro__name">Alvio Leegia</h1>
+            <p className="intro__title">Senior Fullstack Engineer</p>
             <nav className="intro__links" aria-label="Social and contact links">
               {LINKS.map(({ href, label, icon }) => (
                 <a key={label} href={href} className="intro__link" target="_blank" rel="noopener noreferrer" aria-label={label}>
