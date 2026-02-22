@@ -509,6 +509,13 @@
   font-size: 0.875rem;
   font-weight: 500;
   color: var(--color-title);
+  margin-bottom: 0.25rem;
+}
+
+.experience-item__tech {
+  font-size: 0.8125rem;
+  color: var(--color-text-muted);
+  margin-top: 0;
   margin-bottom: 0.5rem;
 }
 
@@ -537,7 +544,7 @@
 
 /* Contact */
 .section--contact {
-  border-bottom: none;
+  border-bottom: 1px solid var(--color-border);
 }
 
 .contact-text {

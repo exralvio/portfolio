@@ -8,13 +8,15 @@ const LINKS = [
 ]
 
 const SKILLS = [
-  { category: 'Frontend', skills: ['Bootstrap', 'React', 'TypeScript', 'Next.js'] },
-  { category: 'Backend', skills: ['Python', 'Node.js', 'NestJS'] },
-  { category: 'Tools', skills: ['Git', 'REST APIs', 'CSS / Sass'] },
+  { category: 'Backend', skills: ['PHP', 'Node.js', 'Python', 'Go', 'Laravel', 'Yii', 'Express', 'NestJS', 'Django', 'FastAPI', 'Gin', 'Echo'] },
+  { category: 'Frontend', skills: ['HTML5', 'JavaScript', 'CSS3', 'jQuery', 'React', 'Vue', 'Next.js'] },
+  { category: 'Databases', skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'DynamoDB'] },
+  { category: 'Tools', skills: ['Kafka', 'Docker', 'Git', 'AWS', 'GCP'] },
 ]
 
 const EDUCATION = [
-  { school: 'University Name', degree: 'B.S. Computer Science', period: '2018 – 2022' },
+  { school: 'Widyatama University, Bandung', degree: 'B.S. in Information Technology', period: 'Apr 2012 – Apr 2016' },
+  { school: 'SMKN 4, Bandung', degree: 'VHS: Software Engineer', period: 'Mar 2009 – Mar 2012' },
 ]
 
 const COMPANY_PROJECTS = [
@@ -61,33 +63,92 @@ const SIDE_PROJECTS = [
 ]
 
 const NAV_SECTIONS = [
-  { id: 'experience', label: 'Experience' },
   { id: 'company-projects', label: 'Company Projects' },
   { id: 'side-projects', label: 'Side Projects' },
-  { id: 'skills', label: 'Skills' },
+  { id: 'experience', label: 'Experience' },
   { id: 'education', label: 'Education' },
   { id: 'contact', label: 'Contact' },
+  { id: 'skills', label: 'Skills' },
 ]
 
 const EXPERIENCE = [
   {
-    company: 'Company Name',
-    position: 'Senior Software Engineer',
+    company: 'MDI AI Detection LLC',
+    position: 'Senior Fullstack Engineer',
+    tech: 'ReactJS, Python, Flask, MongoDB, Kafka, Docker, VPS',
     description: [
-      'Brief description of your responsibilities and impact.',
-      'Key achievements and technologies used.',
-      'Another notable contribution or outcome.',
+      'Developed a dynamic ReactJS dashboard and a feature-rich customer web application.',
+      'Built and optimized scalable RESTful APIs using Django, ensuring seamless integration with frontend components.',
+      'Implemented real-time event detection and push notifications via WebSocket for instant user updates.',
+      'Integrated AI-driven models with live CCTV video streams, enabling automated real-time monitoring and analysis.',
     ],
-    year: '2022 – Present',
+    year: 'Jan 2025 – Jan 2026',
   },
   {
-    company: 'Previous Company',
-    position: 'Software Engineer',
+    company: 'Senja Solution',
+    position: 'Senior Fullstack Engineer',
+    tech: 'NestJS, NodeJS, ReactJS, MySQL, MongoDB, AWS EC2',
     description: [
-      'What you built and how you contributed.',
-      'Tech stack and outcomes.',
+      'Improved and developed RESTful APIs for both mobile and web dashboard applications using Node.js (Express) and ReactJS.',
+      'Designed and built an end-to-end Inventory Management System for UCO, leveraging NestJS and ReactJS to streamline stock tracking and operations.',
+      'Authored comprehensive technical documentation and detailed implementation plans to support scalable system maintenance.',
+      'Led agile ceremonies, including daily stand-ups and sprint planning, to coordinate tasks and ensure timely project delivery.',
     ],
-    year: '2020 – 2022',
+    year: 'Apr 2023 – Dec 2024',
+  },
+  {
+    company: 'PT FinAccel Teknologi Indonesia (Kredivo)',
+    position: 'Senior Backend Engineer',
+    tech: 'ReactJS, NestJS, Python, Django, MySQL, AWS ECS, AWS S3, Java',
+    description: [
+      'Built and scaled microservices using Python (Django) to power BNPL systems across multiple verticals, including billers (credit, data, PLN, e-wallets) and travel (train & flight). Supporting over 7M+ users with high availability and performance.',
+      'Integrated third-party partner to expand product offerings and improve interoperability across financial and travel ecosystems.',
+      'Developed internal tools with ReactJS and NestJS, significantly improving workflow automation and team efficiency.',
+      'Developed and integrated service-to-service communication with the Transaction microservice using Java.',
+    ],
+    year: 'Dec 2020 – Dec 2023',
+  },
+  {
+    company: 'PT Ralali (Raja Laju Lintang), Bandung',
+    position: 'Backend Engineer',
+    tech: 'Go, MySQL, Kafka, AWS EC2',
+    description: [
+      'Developed high-performance RESTful APIs for an online side-job marketplace, ensuring secure and efficient data handling.',
+      'Designed scalable microservices in Go, optimized for reliability, concurrency, and low-latency performance.',
+    ],
+    year: 'Nov 2018 – Nov 2020',
+  },
+  {
+    company: 'PT Eagleye Citra Nusantara',
+    position: 'Lead Fullstack Engineer',
+    tech: 'NodeJS, MongoDB, Kafka, AWS EC2',
+    description: [
+      'Built and scaled a national-level SaaS platform for supermarket inventory management, enabling real-time stock and tracking.',
+      'Led agile sprints and defined development roadmaps, ensuring efficient project execution and cross-team alignment.',
+      'Scaled the platform to support 1,000+ merchants across Indonesia, improving operational efficiency and system reliability.',
+    ],
+    year: 'Sep 2017 – Oct 2018',
+  },
+  {
+    company: 'PT Ebizu Prima Nusantara, Bandung',
+    position: 'Senior Backend Engineer',
+    tech: 'Flask, DynamoDB, Laravel, MySQL, AWS Serverless',
+    description: [
+      'Migrated legacy PHP APIs to a serverless architecture, significantly reducing infrastructure costs and improving scalability.',
+      'Provided technical leadership, offering support during weekly team meetings to ensure smooth project delivery.',
+    ],
+    year: 'Dec 2016 – Aug 2017',
+  },
+  {
+    company: 'PT Walden Global Service, Bandung',
+    position: 'Lead Fullstack Engineer',
+    tech: 'PHP, Laravel, AngularJS, NodeJS, MySQL, Postgres, AWS EC2, AWS S3, Docker',
+    description: [
+      'Led a small team and managed sprint planning while coordinating closely with clients to align goals and expectations.',
+      'Designed, built, and launched web applications using various PHP and JavaScript frameworks.',
+      'Successfully delivered 25+ web projects across diverse industries.',
+    ],
+    year: 'Dec 2012 – Nov 2016',
   },
 ]
 
@@ -224,6 +285,15 @@ function App() {
             </nav>
           </header>
 
+          <section className="section section--contact" id="contact" aria-labelledby="contact-heading">
+            <h2 id="contact-heading" className="section__title">Contact</h2>
+            <p className="contact-text">
+              Open to new opportunities and conversations.
+              <br />
+              <a href="mailto:exralvio&#64;gmail&#46;com" className="contact-email">exralvio&#64;gmail&#46;com</a>
+            </p>
+          </section>
+
           <section className="section" id="skills" aria-labelledby="skills-heading">
             <h2 id="skills-heading" className="section__title">Skills</h2>
             <div className="skills-categories">
@@ -239,53 +309,9 @@ function App() {
               ))}
             </div>
           </section>
-
-          <section className="section" id="education" aria-labelledby="education-heading">
-            <h2 id="education-heading" className="section__title">Education</h2>
-            <ul className="education-list">
-              {EDUCATION.map(({ school, degree, period }) => (
-                <li key={school} className="education-item">
-                  <div className="education-item__main">
-                    <span className="education-item__school">{school}</span>
-                    <span className="education-item__period">{period}</span>
-                  </div>
-                  <p className="education-item__degree">{degree}</p>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="section section--contact" id="contact" aria-labelledby="contact-heading">
-            <h2 id="contact-heading" className="section__title">Contact</h2>
-            <p className="contact-text">
-              Open to new opportunities and conversations.
-              <br />
-              <a href="mailto:you@example.com" className="contact-email">you@example.com</a>
-            </p>
-          </section>
         </aside>
 
         <main className="portfolio__main">
-          <section className="section" id="experience" aria-labelledby="experience-heading">
-            <h2 id="experience-heading" className="section__title">Experience</h2>
-            <ul className="experience-list">
-              {EXPERIENCE.map(({ company, position, description, year }) => (
-                <li key={`${company}-${year}`} className="experience-item">
-                  <div className="experience-item__header">
-                    <span className="experience-item__company">{company}</span>
-                    <span className="experience-item__year">{year}</span>
-                  </div>
-                  <p className="experience-item__position">{position}</p>
-                  <ul className="experience-item__description">
-                    {description.map((item, i) => (
-                      <li key={i}>{item}</li>
-                    ))}
-                  </ul>
-                </li>
-              ))}
-            </ul>
-          </section>
-
           <section className="section" id="company-projects" aria-labelledby="company-heading">
             <h2 id="company-heading" className="section__title">Company Projects</h2>
             <ul className="project-list">
@@ -424,6 +450,42 @@ function App() {
                       Find out more
                     </a>
                   ) : null}
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="section" id="experience" aria-labelledby="experience-heading">
+            <h2 id="experience-heading" className="section__title">Experience</h2>
+            <ul className="experience-list">
+              {EXPERIENCE.map(({ company, position, tech, description, year }) => (
+                <li key={`${company}-${year}`} className="experience-item">
+                  <div className="experience-item__header">
+                    <span className="experience-item__company">{company}</span>
+                    <span className="experience-item__year">{year}</span>
+                  </div>
+                  <p className="experience-item__position">{position}</p>
+                  {tech ? <p className="experience-item__tech">{tech}</p> : null}
+                  <ul className="experience-item__description">
+                    {description.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="section" id="education" aria-labelledby="education-heading">
+            <h2 id="education-heading" className="section__title">Education</h2>
+            <ul className="education-list">
+              {EDUCATION.map(({ school, degree, period }) => (
+                <li key={school} className="education-item">
+                  <div className="education-item__main">
+                    <span className="education-item__school">{school}</span>
+                    <span className="education-item__period">{period}</span>
+                  </div>
+                  <p className="education-item__degree">{degree}</p>
                 </li>
               ))}
             </ul>
