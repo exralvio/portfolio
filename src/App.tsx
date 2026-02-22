@@ -8,10 +8,10 @@ const LINKS = [
 ]
 
 const SKILLS = [
-  { category: 'Backend', skills: ['PHP', 'Node.js', 'Python', 'Go', 'Laravel', 'Yii', 'Express', 'NestJS', 'Django', 'FastAPI', 'Gin', 'Echo'] },
-  { category: 'Frontend', skills: ['HTML5', 'JavaScript', 'CSS3', 'jQuery', 'React', 'Vue', 'Next.js'] },
+  { category: 'Backend', skills: ['PHP', 'Node.js', 'Python', 'Go', 'Laravel', 'Yii', 'Express', 'NestJS', 'Django', 'Flask', 'Echo'] },
+  { category: 'Frontend', skills: ['HTML5', 'JavaScript', 'CSS3', 'jQuery', 'React', 'TypeScript', 'Vue', 'Next.js'] },
   { category: 'Databases', skills: ['MySQL', 'PostgreSQL', 'MongoDB', 'DynamoDB'] },
-  { category: 'Tools', skills: ['Kafka', 'Docker', 'Git', 'AWS', 'GCP'] },
+  { category: 'Tools', skills: ['Kafka', 'Docker', 'Git', 'AWS', 'GCP', 'CI/CD', 'RabbitMQ'] },
 ]
 
 const EDUCATION = [
