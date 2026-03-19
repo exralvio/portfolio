@@ -1,6 +1,9 @@
 import { useState, useCallback, useEffect } from 'react'
 import './App.css'
 
+// Prepend Vite's base URL so asset paths work on both localhost and GitHub Pages (/portfolio/)
+const withBase = (path: string) => `${import.meta.env.BASE_URL}${path.replace(/^\//, '')}`
+
 type ProjectItem = {
   name: string
   description: string
@@ -408,7 +411,7 @@ function App() {
         <aside className="portfolio__aside">
           <header className="intro">
             <img
-              src="/alvio-profile.jpg"
+              src={withBase('/alvio-profile.jpg')}
               alt=""
               className="intro__photo"
               width={120}
@@ -467,7 +470,7 @@ function App() {
                           src ? (
                             <img
                               key={i}
-                              src={src}
+                              src={withBase(src)}
                               alt=""
                               className="project-card__img project-card__img--clickable"
                               loading="lazy"
@@ -538,7 +541,7 @@ function App() {
                           src ? (
                             <img
                               key={i}
-                              src={src}
+                              src={withBase(src)}
                               alt=""
                               className="project-card__img project-card__img--clickable"
                               loading="lazy"
@@ -651,7 +654,7 @@ function App() {
             </svg>
           </button>
           <img
-            src={lightboxImage}
+            src={withBase(lightboxImage)}
             alt=""
             className="lightbox__img"
             onClick={(e) => e.stopPropagation()}
