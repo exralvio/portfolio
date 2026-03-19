@@ -21,8 +21,28 @@ const EDUCATION = [
 
 const COMPANY_PROJECTS = [
   {
-    name: 'Inventory System for Noovoleum Dashboard',
-    description: 'Design and developing Liquid tracking system for Used Cooking Oil.',
+    name: 'MDI HUB - Server Monitoring and API relay service for mobile app',
+    description: 'Server monitoring and API relay service for mobile app.',
+    period: '',
+    images: ['/assets/images/portfolio/1_erp.jpg'],
+    findOutMore: 'https://www.linkedin.com/company/mdi-ai-detection/',
+    stacks: ['Python', 'FastAPI', 'ReactJS', 'MongoDB'],
+    tools: ['Redis', 'Websocket', 'Firebase'],
+    team: '1 Fullstack, 2 AI Engineer',
+  },
+  {
+    name: 'MDI APP - Advance web app for CCTV Monitoring',
+    description: 'AI Integrated web app for CCTV monitoring on-premise server.',
+    period: '',
+    images: ['/assets/images/portfolio/1_erp.jpg'],
+    findOutMore: 'https://www.linkedin.com/company/mdi-ai-detection/',
+    stacks: ['Python', 'Flask', 'ReactJS', 'MongoDB'],
+    tools: ['Docker', 'Redis', 'Nginx', 'GStreamer', 'FFmpeg', 'OpenCV'],
+    team: '1 Fullstack, 2 AI Engineer',
+  },
+  {
+    name: 'Noovoleum Inventory - Tracking system for liquid used cooking oil',
+    description: 'Dashboard for managing liquid used cooking oil inventory.',
     period: '',
     images: ['/assets/images/portfolio/1_erp.jpg'],
     findOutMore: 'https://noovoleum.com/',
@@ -31,18 +51,18 @@ const COMPANY_PROJECTS = [
     team: '1 Frontend, 1 Backend',
   },
   {
-    name: 'CRM and API for UCOllect App by Noovoleum',
-    description: 'Developing and improving API for Noovoleum Mobile APP.',
+    name: 'Noovoleum CRM - Dashboard and API for Noovoleum Mobile APP',
+    description: 'Dashboard and RESTful APIs for Noovoleum Mobile APP.',
     period: '',
     images: ['/assets/images/portfolio/2_dashboard.jpg'],
     findOutMore: 'https://play.google.com/store/apps/details?id=com.noovoleum.ucollect&hl=en',
-    stacks: ['MongoDB', 'Express', 'ReactJS', 'NodeJS'],
+    stacks: ['Express', 'ReactJS', 'NodeJS', 'MongoDB'],
     tools: ['AWS EC2', 'Xendit'],
     team: '1 Frontend, 2 Backend, 1 QA',
   },
   {
-    name: 'Biller Service for Kredivo Mobile App',
-    description: 'Developing and improving service for consumable products in a Fintech mobile app.',
+    name: 'Kredivo Biller - consumable products service for a Fintech mobile app',
+    description: 'Service for providing consumable products to users in a Fintech mobile app.',
     period: '',
     images: ['/assets/images/portfolio/3_kredivo.jpg'],
     findOutMore: 'https://play.google.com/store/apps/details?id=com.finaccel.android&hl=id',
@@ -51,18 +71,18 @@ const COMPANY_PROJECTS = [
     team: '1 Lead, 3 Backend, 2 QA, 2 Mobile',
   },
   {
-    name: 'CRM System for Kredivo Biller',
-    description: 'Design and developing internal dashboard for Biller Service.',
+    name: 'Biller CRM - Internal dashboard for Kredivo Biller',
+    description: 'Dashboard for managing biller products, services and 3rd party integrations.',
     period: '',
     images: ['/assets/images/portfolio/3_kredivo.jpg'],
     findOutMore: 'https://kredivo.id/',
-    stacks: ['VueJS', 'NodeJS', 'MySQL'],
+    stacks: ['VueJS', 'NestJS', 'MySQL'],
     tools: ['AWS EC2'],
     team: '1 Lead, 1 Fullstack, 1 QA',
   },
   {
-    name: 'Ralali Agent Mobile App',
-    description: 'Developing API to provide various kinds of side jobs to earn extra income, part of B2B marketplace.',
+    name: 'Ralali Big Agent - Mobile app for side jobs marketplace',
+    description: 'Mobile app for providing various kinds of side jobs to earn extra income, part of B2B marketplace.',
     period: '',
     images: ['/assets/images/portfolio/5_ralali.jpg'],
     findOutMore: 'https://play.google.com/store/apps/details?id=com.ralali.bigagent.android&hl=en',
@@ -71,8 +91,8 @@ const COMPANY_PROJECTS = [
     team: '2 Backend, 1 Frontend, 2 Mobile, 2 QA, 1 UI/UX',
   },
   {
-    name: 'Eagleye SaaS',
-    description: 'Developing CRM application for Retail field agent, part of advertising agency.',
+    name: 'Eagleye SaaS - CRM application for Retail field agent',
+    description: 'CRM application for Retail field agent, part of advertising agency.',
     period: '',
     images: ['/assets/images/projects/project-5.png'],
     findOutMore: 'https://www.linkedin.com/company/powerswitch/',
@@ -80,8 +100,8 @@ const COMPANY_PROJECTS = [
     team: '3 Backend, 2 Frontend, 2 QA',
   },
   {
-    name: 'Manis Mobile App by Ebizu',
-    description: 'Providing various types of rewards to users based on their loyalty to the retail platform. Developing code by transitioning from PHP to Python and migrating to a serverless architecture to reduce infrastructure costs.',
+    name: 'Manis Mobile App - Reward system for retail platform',
+    description: 'Provided various types of rewards to users based on their loyalty to the retail platform.',
     period: '',
     images: ['/assets/images/portfolio/7_manis.jpg'],
     findOutMore: 'https://www.facebook.com/ManisInstantRewardID/',
@@ -89,8 +109,8 @@ const COMPANY_PROJECTS = [
     team: '1 Backend, 1 QA',
   },
   {
-    name: 'Oktagon',
-    description: 'Developing Ecommerce for Digital Goods.',
+    name: 'Oktagon Ecommerce Web App',
+    description: 'Web app for ecommerce of Digital Goods.',
     period: '',
     images: ['/assets/images/portfolio/8_oktagon.jpg'],
     findOutMore: 'https://www.linkedin.com/company/oktagon/',
@@ -99,11 +119,11 @@ const COMPANY_PROJECTS = [
   },
   {
     name: 'Gui.de',
-    description: 'Developing platform transforming web news into audio visual.',
+    description: 'Web app for transforming web news into audio visual.',
     period: '',
     images: ['/assets/images/portfolio/9_guide.jpg'],
     findOutMore: 'https://www.linkedin.com/company/guide./',
-    stacks: ['HTML5', 'UnderscoreJS'],
+    stacks: ['HTML5', 'JavaScript', 'UnderscoreJS'],
     team: '1 Fullstack, 1 QA',
   },
 ]
@@ -379,7 +399,7 @@ function App() {
             <h1 className="intro__name">Alvio Leegia</h1>
             <p className="intro__title">Fullstack Engineer</p>
             <p className="intro__bio">
-              Engineer with a track record of building scalable APIs and dashboards. I ship with TypeScript, Node, Python, and Go, and have led teams and agile delivery across 10+ years.
+              Experienced Engineer with a track record of building scalable APIs and dashboards. I ship with TypeScript, Node, Python, and Go, and have led teams and agile delivery across 10+ years.
             </p>
             <nav className="intro__links" aria-label="Social links">
               {LINKS.map(({ href, label, icon }) => (
