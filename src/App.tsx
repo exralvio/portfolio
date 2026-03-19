@@ -1,6 +1,18 @@
 import { useState, useCallback, useEffect } from 'react'
 import './App.css'
 
+type ProjectItem = {
+  name: string
+  description: string
+  images: string[]
+  findOutMore: string
+  stacks: string[]
+  team: string
+  tools?: string[]
+  period?: string
+  link?: string
+}
+
 const LINKS = [
   { href: 'https://github.com/exralvio', label: 'GitHub', icon: 'github' },
   { href: 'https://www.linkedin.com/in/rizky-alvio-leegia/', label: 'LinkedIn', icon: 'linkedin' },
@@ -19,7 +31,7 @@ const EDUCATION = [
   { school: 'SMKN 4, Bandung', degree: 'VHS: Software Engineer', period: 'Mar 2009 – Mar 2012' },
 ]
 
-const COMPANY_PROJECTS = [
+const COMPANY_PROJECTS: ProjectItem[] = [
   {
     name: 'MDI REST - Rest API and Stream relay service for mobile app',
     description: 'Rest API, Notification and Camera stream relay service for mobile app.',
@@ -138,7 +150,7 @@ const COMPANY_PROJECTS = [
   },
 ]
 
-const SIDE_PROJECTS = [
+const SIDE_PROJECTS: ProjectItem[] = [
   {
     name: 'HKBP Kebayoran Baru',
     description: 'Church company profile with custom feature.',
