@@ -36,10 +36,20 @@ const EDUCATION = [
 
 const COMPANY_PROJECTS: ProjectItem[] = [
   {
+    name: 'MDI WEB - Advance web app for CCTV Monitoring',
+    description: 'AI Integrated web app for CCTV monitoring on-premise server.',
+    period: '',
+    images: ['/projects/1_mdi.jpg', '/projects/2_mdi.jpg', '/projects/3_mdi.jpg'],
+    findOutMore: 'https://www.linkedin.com/company/mdi-ai-detection/',
+    stacks: ['Python', 'Flask', 'ReactJS', 'MongoDB'],
+    tools: ['Docker', 'Redis', 'Nginx', 'GStreamer', 'FFmpeg', 'OpenCV'],
+    team: '1 Fullstack, 2 AI Engineer',
+  },
+  {
     name: 'MDI REST - Rest API and Stream relay service for mobile app',
     description: 'Rest API, Notification and Camera stream relay service for mobile app.',
     period: '',
-    images: ['/projects/1_central.jpg', '/projects/2_central.jpg', '/projects/3_central.jpg'],
+    images: ['/projects/4_app.jpg', '/projects/6_app.jpg', '/projects/7_app.jpg'],
     findOutMore: 'https://mdiaidetection.com/',
     stacks: ['Python', 'FastAPI', 'MongoDB'],
     tools: ['Redis', 'Websocket', 'Firebase'],
@@ -54,16 +64,6 @@ const COMPANY_PROJECTS: ProjectItem[] = [
     stacks: ['Python', 'FastAPI', 'ReactJS', 'MongoDB'],
     tools: ['Docker', 'Websocket', 'VPS'],
     team: '1 Fullstack',
-  },
-  {
-    name: 'MDI WEB - Advance web app for CCTV Monitoring',
-    description: 'AI Integrated web app for CCTV monitoring on-premise server.',
-    period: '',
-    images: ['/projects/1_mdi.jpg', '/projects/2_mdi.jpg', '/projects/3_mdi.jpg'],
-    findOutMore: 'https://www.linkedin.com/company/mdi-ai-detection/',
-    stacks: ['Python', 'Flask', 'ReactJS', 'MongoDB'],
-    tools: ['Docker', 'Redis', 'Nginx', 'GStreamer', 'FFmpeg', 'OpenCV'],
-    team: '1 Fullstack, 2 AI Engineer',
   },
   {
     name: 'Noovoleum Inventory - Tracking system for liquid used cooking oil',
