@@ -21,17 +21,27 @@ const EDUCATION = [
 
 const COMPANY_PROJECTS = [
   {
-    name: 'MDI HUB - Server Monitoring and API relay service for mobile app',
-    description: 'Server monitoring and API relay service for mobile app.',
+    name: 'MDI REST - Rest API and Video stream relay service for mobile app',
+    description: 'Rest API and Video stream relay service for mobile app.',
     period: '',
     images: ['/assets/images/portfolio/1_erp.jpg'],
-    findOutMore: 'https://www.linkedin.com/company/mdi-ai-detection/',
+    findOutMore: 'https://mdiaidetection.com/',
     stacks: ['Python', 'FastAPI', 'ReactJS', 'MongoDB'],
     tools: ['Redis', 'Websocket', 'Firebase'],
-    team: '1 Fullstack, 2 AI Engineer',
+    team: '1 Fullstack, 1 Mobile',
   },
   {
-    name: 'MDI APP - Advance web app for CCTV Monitoring',
+    name: 'MDI HUB - Server Monitoring and Docker Deployment Service',
+    description: 'Server monitoring and Customized docker deployment service for on-premise server.',
+    period: '',
+    images: ['/assets/images/portfolio/1_erp.jpg'],
+    findOutMore: 'https://mdiaidetection.com/',
+    stacks: ['Python', 'FastAPI', 'ReactJS', 'MongoDB'],
+    tools: ['Docker', 'Websocket', 'VPS'],
+    team: '1 Fullstack',
+  },
+  {
+    name: 'MDI WEB - Advance web app for CCTV Monitoring',
     description: 'AI Integrated web app for CCTV monitoring on-premise server.',
     period: '',
     images: ['/assets/images/portfolio/1_erp.jpg'],
